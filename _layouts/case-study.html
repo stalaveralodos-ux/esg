@@ -9,29 +9,60 @@ layout: default
     <p style="color: var(--muted); font-size: 0.85rem;">Última actualización: {{ page.date_updated | date: "%d %B %Y" }}</p>
   </header>
 
-  <div class="info-grid">
+  <div class="scope-grid">
     {% if page.csrd_scope %}
-    <div class="info-card">
-      <div class="info-label">CSRD</div>
-      <div class="info-value">{{ page.csrd_scope }}</div>
+    {% assign parts = page.csrd_scope | split: '. ' %}
+    <div class="scope-card">
+      <div class="scope-label">CSRD</div>
+      {% if page.csrd_scope contains "Dentro de ámbito" %}
+        <span class="scope-tag scope-in">Dentro de ámbito</span>
+      {% elsif page.csrd_scope contains "Fuera de ámbito" %}
+        <span class="scope-tag scope-out">Fuera de ámbito</span>
+      {% else %}
+        <span class="scope-tag scope-neutral">{{ parts[0] }}</span>
+      {% endif %}
+      {% if parts.size > 1 %}<p class="scope-detail">{{ parts | slice: 1, parts.size | join: '. ' }}</p>{% endif %}
     </div>
     {% endif %}
+
     {% if page.csddd_scope %}
-    <div class="info-card">
-      <div class="info-label">CSDDD</div>
-      <div class="info-value">{{ page.csddd_scope }}</div>
+    {% assign parts = page.csddd_scope | split: '. ' %}
+    <div class="scope-card">
+      <div class="scope-label">CSDDD</div>
+      {% if page.csddd_scope contains "Dentro de ámbito" %}
+        <span class="scope-tag scope-in">Dentro de ámbito</span>
+      {% elsif page.csddd_scope contains "Fuera de ámbito" %}
+        <span class="scope-tag scope-out">Fuera de ámbito</span>
+      {% else %}
+        <span class="scope-tag scope-neutral">{{ parts[0] }}</span>
+      {% endif %}
+      {% if parts.size > 1 %}<p class="scope-detail">{{ parts | slice: 1, parts.size | join: '. ' }}</p>{% endif %}
     </div>
     {% endif %}
+
     {% if page.taxonomy_status %}
-    <div class="info-card">
-      <div class="info-label">EU Taxonomy</div>
-      <div class="info-value">{{ page.taxonomy_status }}</div>
+    {% assign parts = page.taxonomy_status | split: '; ' %}
+    <div class="scope-card">
+      <div class="scope-label">EU Taxonomy</div>
+      <span class="scope-tag scope-neutral">{{ parts[0] }}</span>
+      {% if parts.size > 1 %}<p class="scope-detail">{{ parts | slice: 1, parts.size | join: '; ' }}</p>{% endif %}
     </div>
     {% endif %}
+
     {% if page.ppwr_exposure %}
-    <div class="info-card">
-      <div class="info-label">PPWR</div>
-      <div class="info-value">{{ page.ppwr_exposure }}</div>
+    {% assign parts = page.ppwr_exposure | split: ', ' %}
+    <div class="scope-card">
+      <div class="scope-label">PPWR</div>
+      {% if page.ppwr_exposure contains "Alta" %}
+        <span class="scope-tag scope-high">Alta exposición</span>
+      {% elsif page.ppwr_exposure contains "Moderada" %}
+        <span class="scope-tag scope-medium">Exposición moderada</span>
+      {% elsif page.ppwr_exposure contains "Baja" %}
+        <span class="scope-tag scope-low">Baja exposición</span>
+      {% else %}
+        <span class="scope-tag scope-neutral">{{ parts[0] }}</span>
+      {% endif %}
+      {% if parts.size > 1 %}<p class="scope-detail">{{ parts | slice: 1, parts.size | join: ', ' }}</p>{% endif %}
     </div>
     {% endif %}
   </div>
