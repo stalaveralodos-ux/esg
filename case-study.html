@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<article class="case-study">
+  <header>
+    <span class="tag tag-institutional">{{ page.sector }}</span>
+    <span class="tag tag-neutral">{{ page.country }}</span>
+    <h1>{{ page.title }}</h1>
+    <p style="color: var(--muted); font-size: 0.85rem;">Última actualización: {{ page.date_updated | date: "%d %B %Y" }}</p>
+  </header>
+
+  <div class="info-grid">
+    {% if page.csrd_scope %}
+    <div class="info-card">
+      <div class="info-label">CSRD</div>
+      <div class="info-value">{{ page.csrd_scope }}</div>
+    </div>
+    {% endif %}
+    {% if page.csddd_scope %}
+    <div class="info-card">
+      <div class="info-label">CSDDD</div>
+      <div class="info-value">{{ page.csddd_scope }}</div>
+    </div>
+    {% endif %}
+    {% if page.taxonomy_status %}
+    <div class="info-card">
+      <div class="info-label">EU Taxonomy</div>
+      <div class="info-value">{{ page.taxonomy_status }}</div>
+    </div>
+    {% endif %}
+    {% if page.ppwr_exposure %}
+    <div class="info-card">
+      <div class="info-label">PPWR</div>
+      <div class="info-value">{{ page.ppwr_exposure }}</div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="directive-content">
+    {{ content }}
+  </div>
+
+  <footer class="brief-footer">
+    <a href="{{ '/sector-impact/' | relative_url }}">&larr; Volver a Sector impact</a>
+  </footer>
+</article>
