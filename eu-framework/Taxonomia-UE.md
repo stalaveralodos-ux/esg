@@ -1,3 +1,8 @@
+---
+layout: default
+title: Taxonomía de la UE
+---
+
 # Taxonomia-UE — Taxonomía de la UE / EU Taxonomy
 
 ---
