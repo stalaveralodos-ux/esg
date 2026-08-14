@@ -1,3 +1,8 @@
+---
+layout: default
+title: CSDDD
+---
+
 # CSDDD — Directiva de Diligencia Debida en Sostenibilidad Corporativa / Corporate Sustainability Due Diligence Directive
 
 ---
