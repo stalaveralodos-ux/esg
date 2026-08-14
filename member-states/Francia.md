@@ -1,3 +1,8 @@
+---
+layout: default
+title: Francia — Transposición
+---
+
 # Francia / France — Transposición normativa / Legal transposition
 
 ---
