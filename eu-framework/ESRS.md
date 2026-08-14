@@ -1,3 +1,8 @@
+---
+layout: default
+title: ESRS
+---
+
 # ESRS — Estándares Europeos de Información sobre Sostenibilidad / European Sustainability Reporting Standards
 
 ---
