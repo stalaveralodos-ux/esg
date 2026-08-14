@@ -1,3 +1,8 @@
+---
+layout: default
+title: CSRD
+---
+
 # CSRD — Directiva de Información sobre Sostenibilidad Corporativa / Corporate Sustainability Reporting Directive
 
 ---
