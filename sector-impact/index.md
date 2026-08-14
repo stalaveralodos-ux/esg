@@ -1,4 +1,3 @@
-[sector_impact_index.md](https://github.com/user-attachments/files/31083216/sector_impact_index.md)
 ---
 layout: default
 title: Sector impact
